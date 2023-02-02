@@ -24,6 +24,9 @@ Route::get('/register', [RegisterController::class, 'create'])->middleware('gues
 
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
+Route::get('/inicio', function(){
+    return view('inicio');
+});  
 
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest') ->name('login.index');
 
@@ -35,3 +38,4 @@ Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('auth'
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
 
 
+Route::view('/adminMascotas', 'admin.mascotasCRUD')->name('mascotas');
