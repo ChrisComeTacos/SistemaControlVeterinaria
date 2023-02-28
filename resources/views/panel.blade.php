@@ -26,6 +26,21 @@
 
 @section('content')
 
-<h1 class="text-5xl text-center pt-24">Bienvenidos a la veterinaria</h1>
+  {{-- <h1 class="text-5xl text-center pt-24">Bienvenidos a la veterinaria</h1> --}}
+
+  <section class="inicio__main container">
+    <div class="inicio__texts">
+      <h1 class="inicio__title">NOS PREOCUPAMOS POR TU MASCOTA</h1>
+      <p class="inicio__subtitle">Atendemos a sus mascotas de forma integral con el apoyo de un experimentado médico veterinario de perros y gatos para brindarles los tratamientos y cuidados que merecen.</p>
+      <a href="#" class="inicio_cta">Agenda una cita</a>
+    </div>
     
+    <figure class="inicio_picture">
+      <img src="img/dogWalking.svg" class="inicio__img">
+    </figure>
+
+  </section>
+
+  <img src="img/InicioBG.svg" alt="">
+
 @endsection
