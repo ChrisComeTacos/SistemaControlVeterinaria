@@ -16,6 +16,7 @@
   <title>Veterinaria</title>
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid">
       <a class="navbar-brand text-white" href="#">
@@ -30,7 +31,7 @@
   
       @if(auth()->check())
       <div class="d-flex">
-          <p class="m-2">Bienvenido <b>{{ auth()->user()->name }}</b></p>
+          <p class="text-white m-2">Bienvenido <b>{{ auth()->user()->name }}</b></p>
           <a href="{{ route('login.destroy') }}">
 
             <button type="button" class="btn btn-danger">Log Out</button>
@@ -51,9 +52,7 @@
 </nav>
 
 
-@yield('content')
-
-@yield('cards')
+  @yield('content')
 
 <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 

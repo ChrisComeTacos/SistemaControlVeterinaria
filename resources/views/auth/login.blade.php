@@ -5,45 +5,49 @@
 @section('content')
 
 <img class="wave" src="img/fondoLogin.png">
-<div class="container">
-    <div class="img">
-        <img src="img/dogWalking.svg">
+
+{{-- <div class="inicio"> --}}
+
+    <div class="container">
+        <div class="img">
+            <img src="img/dogWalking.svg">
+        </div>
+        <div class="login-content">
+            <form method="POST" action="">
+    
+                @csrf
+    
+                <img src="img/catProfileLogin.png">
+                <h2 class="title">¡Bienvenido a nuestra veterinaria!</h2>
+                   <div class="input-div one">
+                      <div class="i">
+                              <i class="fas fa-user"></i>
+                      </div>
+                      <div class="div">
+                              <h5>Correo</h5>
+                              <input type="email" class="input" id="email" name="email">
+                      </div>
+                   </div>
+                   <div class="input-div pass">
+                      <div class="i"> 
+                           <i class="fas fa-lock"></i>
+                      </div>
+                      <div class="div">
+                           <h5>Contraseña</h5>
+                           <input type="password" class="input" id="password" name="password">
+    
+                   </div>
+                </div>
+                <input type="submit" class="loginBoton" value="Login">
+                @error('message')
+                <div class="alert alert-danger m-4" role="alert">
+                    {{ $message }}
+                </div>
+                @enderror
+            </form>
+        </div>
     </div>
-    <div class="login-content">
-        <form method="POST" action="">
-
-            @csrf
-
-            <img src="img/catProfileLogin.png">
-            <h2 class="title">¡Bienvenido a nuestra veterinaria!</h2>
-               <div class="input-div one">
-                  <div class="i">
-                          <i class="fas fa-user"></i>
-                  </div>
-                  <div class="div">
-                          <h5>Correo</h5>
-                          <input type="email" class="input" id="email" name="email">
-                  </div>
-               </div>
-               <div class="input-div pass">
-                  <div class="i"> 
-                       <i class="fas fa-lock"></i>
-                  </div>
-                  <div class="div">
-                       <h5>Contraseña</h5>
-                       <input type="password" class="input" id="password" name="password">
-
-               </div>
-            </div>
-            <input type="submit" class="loginBoton" value="Login">
-            @error('message')
-            <div class="alert alert-danger m-4" role="alert">
-                {{ $message }}
-            </div>
-            @enderror
-        </form>
-    </div>
-</div>
+{{-- </div> --}}
 
 @endsection
 

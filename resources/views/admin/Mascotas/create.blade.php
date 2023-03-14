@@ -1,40 +1,50 @@
-<form action="{{ route('mascotas.store') }}" method="POST">
-    @csrf
-    <div>
-        <label for="">Nombre del dueño</label>
-        <input type="text" name="NombreDueno">
-    </div>
+@extends('layouts.inicio')
 
-    <div>
-        <label for="">Apellido P.</label>
-        <input type="text" name="ApellidoP">
-    </div>
+@section('content')
 
-    <div>
-        <label for="">Apellido M.</label>
-        <input type="text" name="ApellidoM">
-    </div>
+<div class="container mt-5">
 
-    <div>
-        <label for="">Nombre de mascota</label>
-        <input type="text" name="NombreMascota">
-    </div>
+    <form action="{{ route('mascotas.store') }}" method="POST">
+        @csrf
+        <div>
+            <label for="">Nombre del dueño</label>
+            <input type="text" name="NombreDueno" class="form-control">
+        </div>
+    
+        <div>
+            <label for="">Apellido P.</label>
+            <input type="text" name="ApellidoP" class="form-control">
+        </div>
+    
+        <div>
+            <label for="">Apellido M.</label>
+            <input type="text" name="ApellidoM" class="form-control">
+        </div>
+    
+        <div>
+            <label for="">Nombre de mascota</label>
+            <input type="text" name="NombreMascota" class="form-control">
+        </div>
+    
+        <div>
+            <label for="">Raza de mascota</label>
+            <input type="text" name="RazaMascota" class="form-control">
+        </div>
+    
+        <div>
+            <label for="">Diagnóstico</label>
+            <input type="text" name="DiagnosticoMascota" class="form-control">
+        </div>
+    
+        <div>
+            <input type="submit" value="Agregar" class="btn btn-success mt-3">
+        </div>
+    
+    </form>
 
-    <div>
-        <label for="">Raza de mascota</label>
-        <input type="text" name="RazaMascota">
-    </div>
+</div>
 
-    <div>
-        <label for="">Diagnóstico</label>
-        <input type="text" name="DiagnosticoMascota">
-    </div>
-
-    <div>
-        <input type="submit" value="Agregar">
-    </div>
-
-</form>
+@endsection
 
 {{-- <th>id</th>
 <th>Nombre del dueño</th>

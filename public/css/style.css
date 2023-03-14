@@ -19,12 +19,26 @@ body {
     z-index: -1;
 }
 
+.wave2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
 .container {
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+.tabla {
+    width: 100vw;
+    height: 100vh;
     padding: 0 2rem;
 }
 
@@ -216,6 +230,9 @@ a:hover {
     }
 
     .wave {
+        display: none;
+    }
+    .wave2 {
         display: none;
     }
 

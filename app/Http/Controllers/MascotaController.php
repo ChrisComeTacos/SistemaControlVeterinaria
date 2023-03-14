@@ -7,11 +7,20 @@ use Illuminate\Http\Request;
 
 class MascotaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $mascotas = Mascota::all();
+        $busqueda = $request->busqueda;
+        $mascotas = Mascota::where('NombreDueno', 'LIKE','%'.$busqueda.'%')
+                ->orWhere('ApellidoP', 'LIKE','%'.$busqueda.'%')
+                ->orWhere('ApellidoM', 'LIKE','%'.$busqueda.'%')
+                ->orWhere('NombreMascota', 'LIKE','%'.$busqueda.'%')
+                ->orWhere('RazaMascota', 'LIKE','%'.$busqueda.'%')
+                ->orWhere('DiagnosticoMascota', 'LIKE','%'.$busqueda.'%')
+                ->latest('id')
+                ->paginate(3);
         $data = [
             'mascotas'=>$mascotas,
+            'busqueda' =>$busqueda,
         ];
         return view ('admin.mascotas.index',$data);
     }
@@ -37,23 +46,42 @@ class MascotaController extends Controller
         return redirect()->route('mascotas.index');
     }
 
-    public function show($id)
+    public function show($mascota)
     {
-        //
+        $mascota = Mascota::find($mascota);
+        $data = [
+            'mascota'=>$mascota,
+        ];
+        return view('admin.mascotas.show',compact('mascota'));
     }
 
-    public function edit($id)
+    public function edit($mascota)
     {
-        return $id;
+        $mascota = Mascota::find($mascota);
+        $data = [
+            'mascota'=>$mascota,
+        ];
+        return view('admin.mascotas.edit',compact('mascota'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $mascota)
     {
-        //
+        $mascota = Mascota::find($mascota);
+        $mascota->NombreDueno = $request->NombreDueno;
+        $mascota->ApellidoP = $request->ApellidoP;
+        $mascota->ApellidoM = $request->ApellidoM;
+        $mascota->NombreMascota = $request->NombreMascota;
+        $mascota->RazaMascota = $request->RazaMascota;
+        $mascota->DiagnosticoMascota = $request->DiagnosticoMascota;
+
+        $mascota->save();
+        return redirect()->route('mascotas.index');
     }
 
-    public function destroy($id)
+    public function destroy($mascota)
     {
-        return 'Eliminando'. $id;
+        $mascota = Mascota::find($mascota);
+        $mascota->delete();
+        return redirect()->route('mascotas.index');
     }
 }
