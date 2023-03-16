@@ -2,54 +2,60 @@
 
 @section('content')
 
-<div class="container mt-5">
+<img class="wave2" src="/img/InicioBG.png">
 
-    <form action="{{ route('mascotas.store') }}" method="POST">
-        @csrf
-        <div>
-            <label for="">Nombre del dueño</label>
-            <input type="text" name="NombreDueno" class="form-control">
-        </div>
-    
-        <div>
-            <label for="">Apellido P.</label>
-            <input type="text" name="ApellidoP" class="form-control">
-        </div>
-    
-        <div>
-            <label for="">Apellido M.</label>
-            <input type="text" name="ApellidoM" class="form-control">
-        </div>
-    
-        <div>
-            <label for="">Nombre de mascota</label>
-            <input type="text" name="NombreMascota" class="form-control">
-        </div>
-    
-        <div>
-            <label for="">Raza de mascota</label>
-            <input type="text" name="RazaMascota" class="form-control">
-        </div>
-    
-        <div>
-            <label for="">Diagnóstico</label>
-            <input type="text" name="DiagnosticoMascota" class="form-control">
-        </div>
-    
-        <div>
-            <input type="submit" value="Agregar" class="btn btn-success mt-3">
-        </div>
-    
-    </form>
+    <div class="row row align-items-center">
+        <div class="col-6">
 
-</div>
+            <h1 class="m-5">Ingresa los datos de la medicina</h1>
+
+            <form action="{{ route('mascotas.store') }}" style="width: 600px; height: 300px," class="m-5 justify-content-center align-items-center" method="POST">
+                @csrf
+            
+                <div>
+                    <input type="text" name="NombreDueno" class="form-control mb-3" placeholder="Nombre del dueño">
+                </div>
+        
+                
+                <div>
+                    <input type="text" name="ApellidoP" class="form-control mb-3" placeholder="Apellido Paterno">
+                </div>
+                
+                <div>
+                    <input type="text" name="ApellidoM" class="form-control mb-3" placeholder="Apellido Materno">
+                </div>
+
+                <div>
+                    <input type="text" name="NombreMascota" class="form-control mb-3" placeholder="Nombre de la mascota">
+                </div>
+
+                <div>
+                    <input type="text" name="EspecieMascota" class="form-control mb-3" placeholder="Especie">
+                </div>
+ 
+                <div>
+                    <input type="text" name="RazaMascota" class="form-control mb-3" placeholder="Raza">
+                </div>
+                
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="PesoMascota" aria-label="Amount (to the nearest dollar)" placeholder="Peso">
+                    <span class="input-group-text">Kg.</span>
+                </div>
+
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-success" type="submit" value="agregar">Agregar</button>
+                    <a class="btn btn-secondary" href="{{ route('mascotas.index') }}">Volver</a>                </div>
+                
+            </form>
+
+        </div>
+        <div class="col-6">
+
+            <img style="height: 700px; width: 700px;" class="img-fluid" src="/img/Illustration1.svg">
+
+
+        </div>
+    </div>
+    
 
 @endsection
-
-{{-- <th>id</th>
-<th>Nombre del dueño</th>
-<th>Apellido P.</th>
-<th>Apellido M.</th>
-<th>Nombre de mascota</th>
-<th>Raza de mascota</th>
-<th>Diagnostico</th> --}}

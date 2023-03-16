@@ -8,7 +8,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .wave {
@@ -23,7 +23,8 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     z-index: -1;
 }
 
@@ -37,8 +38,6 @@ body {
 }
 
 .tabla {
-    width: 100vw;
-    height: 100vh;
     padding: 0 2rem;
 }
 
@@ -230,9 +229,6 @@ a:hover {
     }
 
     .wave {
-        display: none;
-    }
-    .wave2 {
         display: none;
     }
 

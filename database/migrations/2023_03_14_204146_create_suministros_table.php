@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('materiales', function (Blueprint $table) {
+        Schema::create('suministros', function (Blueprint $table) {
             $table->id();
-            $table->string('NombreMaterial');
-            $table->string('AreaMaterial');
-            $table->decimal('CantidadMaterial');
+            $table->string('NombreSuministro');
+            $table->string('AreaSuministro');
+            $table->decimal('PrecioSuministro',10,2);
+            $table->bigInteger('CantidadSuministro');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materiales');
+        Schema::dropIfExists('suministros');
     }
 };

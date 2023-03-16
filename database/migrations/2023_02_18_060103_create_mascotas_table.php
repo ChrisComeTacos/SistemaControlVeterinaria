@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('ApellidoP');
             $table->string('ApellidoM');
             $table->string('NombreMascota');
+            $table->string('EspecieMascota');
             $table->string('RazaMascota');
-            $table->string('DiagnosticoMascota');
+            $table->string('PesoMascota');
             $table->timestamps();
         });
     }

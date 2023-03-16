@@ -14,8 +14,8 @@ class MascotaController extends Controller
                 ->orWhere('ApellidoP', 'LIKE','%'.$busqueda.'%')
                 ->orWhere('ApellidoM', 'LIKE','%'.$busqueda.'%')
                 ->orWhere('NombreMascota', 'LIKE','%'.$busqueda.'%')
+                ->orWhere('EspecieMascota', 'LIKE','%'.$busqueda.'%')
                 ->orWhere('RazaMascota', 'LIKE','%'.$busqueda.'%')
-                ->orWhere('DiagnosticoMascota', 'LIKE','%'.$busqueda.'%')
                 ->latest('id')
                 ->paginate(3);
         $data = [
@@ -23,6 +23,12 @@ class MascotaController extends Controller
             'busqueda' =>$busqueda,
         ];
         return view ('admin.mascotas.index',$data);
+    }
+
+    public function pdf() {
+
+        return view('admin.mascotas.pdf');
+
     }
 
     public function create()
@@ -38,8 +44,9 @@ class MascotaController extends Controller
         $mascota->ApellidoP = $request->ApellidoP;
         $mascota->ApellidoM = $request->ApellidoM;
         $mascota->NombreMascota = $request->NombreMascota;
+        $mascota->EspecieMascota = $request->EspecieMascota;
         $mascota->RazaMascota = $request->RazaMascota;
-        $mascota->DiagnosticoMascota = $request->DiagnosticoMascota;
+        $mascota->PesoMascota = $request->PesoMascota;
 
         $mascota->save();
 
@@ -71,8 +78,9 @@ class MascotaController extends Controller
         $mascota->ApellidoP = $request->ApellidoP;
         $mascota->ApellidoM = $request->ApellidoM;
         $mascota->NombreMascota = $request->NombreMascota;
+        $mascota->EspecieMascota = $request->EspecieMascota;
         $mascota->RazaMascota = $request->RazaMascota;
-        $mascota->DiagnosticoMascota = $request->DiagnosticoMascota;
+        $mascota->PesoMascota = $request->PesoMascota;
 
         $mascota->save();
         return redirect()->route('mascotas.index');

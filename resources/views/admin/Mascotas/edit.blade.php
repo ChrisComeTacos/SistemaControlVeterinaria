@@ -26,15 +26,20 @@
             <label for="">Nombre de mascota</label>
             <input type="text" name="NombreMascota" value="{{$mascota->NombreMascota}}" class="form-control">
         </div>
+
+        <div>
+            <label for="">Especie</label>
+            <input type="text" name="EspecieMascota" value="{{$mascota->EspecieMascota}}" class="form-control">
+        </div>
     
         <div>
-            <label for="">Raza de mascota</label>
+            <label for="">Raza</label>
             <input type="text" name="RazaMascota" value="{{$mascota->RazaMascota}}" class="form-control">
         </div>
     
         <div>
-            <label for="">Diagnóstico</label>
-            <input type="text" name="DiagnosticoMascota" value="{{$mascota->DiagnosticoMascota}}" class="form-control">
+            <label for="">Peso</label>
+            <input type="text" name="PesoMascota" value="{{$mascota->PesoMascota}}" class="form-control">
         </div>
     
         <div>

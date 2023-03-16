@@ -11,8 +11,7 @@ class MedicinaController extends Controller
     {
         $busqueda = $request->busqueda;
         $medicinas = Medicina::where('NombreMedicamento', 'LIKE','%'.$busqueda.'%')
-                ->orWhere('precio', 'LIKE','%'.$busqueda.'%')
-                ->orWhere('cantidad', 'LIKE','%'.$busqueda.'%')
+                ->orWhere('TipoMedicamento', 'LIKE','%'.$busqueda.'%')
                 ->latest('id')
                 ->paginate(3);
         $data = [
@@ -32,7 +31,9 @@ class MedicinaController extends Controller
         $medicina = new Medicina();
 
         $medicina->NombreMedicamento = $request->NombreMedicamento;
-        $medicina->precio = $request->precio;
+        $medicina->TipoMedicamento = $request->TipoMedicamento;
+        $medicina->ContenidoMedicamento = $request->ContenidoMedicamento;
+        $medicina->PrecioMedicamento = $request->PrecioMedicamento;
         $medicina->cantidad = $request->cantidad;
 
 
@@ -63,7 +64,9 @@ class MedicinaController extends Controller
     {
         $medicina = Medicina::find($medicina);
         $medicina->NombreMedicamento = $request->NombreMedicamento;
-        $medicina->precio = $request->precio;
+        $medicina->TipoMedicamento = $request->TipoMedicamento;
+        $medicina->ContenidoMedicamento = $request->ContenidoMedicamento;
+        $medicina->PrecioMedicamento = $request->PrecioMedicamento;
         $medicina->cantidad = $request->cantidad;
 
         $medicina->save();

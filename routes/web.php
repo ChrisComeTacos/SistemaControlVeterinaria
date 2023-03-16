@@ -6,7 +6,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\MedicinaController;
-use App\Http\Controllers\MaterialesController;
+use App\Http\Controllers\SuministroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +27,8 @@ Route::get('/inicio', function(){
     return view('panel');
 })->name('inicio');  
 
+Route::get('mascotas/pdf',[MascotaController::class,'pdf'])->middleware('auth.admin')->name('mascotas.pdf');
+
 
 // RUTAS DE REGISTER
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest') ->name('register.index');
@@ -46,7 +48,6 @@ Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('auth'
 Route::get('/citas', function(){
     return view('citas');
 })->name('AgendarCita');  
-
 
 // RUTAS DE ADMIN
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
@@ -73,10 +74,18 @@ Route::delete('medicinas/{id}',[MedicinaController::class,'destroy'])->middlewar
 
 // RUTAS DE MATERIALES
 
-Route::get('materiales',[MaterialesController::class,'index'])->middleware('auth.admin')->name('materiales.index');
-Route::get('materiales/create',[MaterialesController::class,'create'])->middleware('auth.admin')->name('materiales.create');
-Route::post('materiales',[MaterialesController::class,'store'])->middleware('auth.admin')->name('materiales.store');
-Route::get('materiales/{id}',[MaterialesController::class,'show'])->middleware('auth.admin')->name('materiales.show');
-Route::get('materiales/{id}/edit',[MaterialesController::class,'edit'])->middleware('auth.admin')->name('materiales.edit');
-Route::put('materiales/{id}',[MaterialesController::class,'update'])->middleware('auth.admin')->name('materiales.update');
-Route::delete('materiales/{id}',[MaterialesController::class,'destroy'])->middleware('auth.admin')->name('materiales.destroy');
+Route::get('suministros',[SuministroController::class,'index'])->middleware('auth.admin')->name('suministros.index');
+Route::get('suministros/create',[SuministroController::class,'create'])->middleware('auth.admin')->name('suministros.create');
+Route::post('suministros',[SuministroController::class,'store'])->middleware('auth.admin')->name('suministros.store');
+Route::get('suministros/{id}',[SuministroController::class,'show'])->middleware('auth.admin')->name('suministros.show');
+Route::get('suministros/{id}/edit',[SuministroController::class,'edit'])->middleware('auth.admin')->name('suministros.edit');
+Route::put('suministros/{id}',[SuministroController::class,'update'])->middleware('auth.admin')->name('suministros.update');
+Route::delete('suministros/{id}',[SuministroController::class,'destroy'])->middleware('auth.admin')->name('suministros.destroy');
+
+// RUTAS DE CITAS MÉDICAS
+
+Route::get('/reservarcitas/create',[AppointmentController::class,'create'])->middleware('auth.admin')->name('ReservarCita');
+Route::post('/miscitas',[AppointmentController::class,'store'])->middleware('auth.admin')->name('ReservarCita');
+
+// RUTAS DE RECETAS MÉDICAS
+

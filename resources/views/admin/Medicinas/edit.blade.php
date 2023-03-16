@@ -11,10 +11,20 @@
             <label for="">Nombre del medicamento</label>
             <input type="text" name="NombreMedicamento" value="{{$medicina->NombreMedicamento}}" class="form-control">
         </div>
+
+        <div>
+            <label for="">Tipo del medicamento</label>
+            <input type="text" name="TipoMedicamento" value="{{$medicina->TipoMedicamento}}" class="form-control">
+        </div>
+
+        <div>
+            <label for="">Contenido del medicamento</label>
+            <input type="text" name="ContenidoMedicamento" value="{{$medicina->ContenidoMedicamento}}" class="form-control">
+        </div>
     
         <div>
             <label for="">Precio</label>
-            <input type="text" name="precio" value="{{$medicina->precio}}" class="form-control">
+            <input type="text" name="PrecioMedicamento" value="{{$medicina->PrecioMedicamento}}" class="form-control">
         </div>
     
         <div>

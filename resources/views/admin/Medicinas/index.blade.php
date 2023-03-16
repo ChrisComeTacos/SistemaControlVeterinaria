@@ -28,38 +28,42 @@
 
     <div class="card">
         <div class="card-header">
-            <h1>Administración de medicinas</h1>
+            <h1>Administración de medicamentos</h1>
         </div>
         
         <div class="card-body">
-            <h5 class="card-title">Lista de medicinas que acudieron a su cita</h5>
+            <h5 class="card-title">Lista de medicinas con las que cuenta la veterinaria para su uso o venta.</h5>
     
             <table class="table table-responsive">
                 <thead>
-                        <th>ID</th>
-                        <th>Nombre del medicamento</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Nombre del medicamento</th>
+                        <th class="text-center">Tipo del medicamento</th>
+                        <th class="text-center">Contenido del medicamento</th>
+                        <th class="text-center">Precio</th>
+                        <th class="text-center">Cantidad</th>
                         <th></th>
                 </thead>
                 <tbody class="table-group-divider">
                     @foreach ($medicinas as $medicina)
                         <tr>
-                            <th>{{$medicina->id}}</th>
-                            <td>{{$medicina->NombreMedicamento}}</td>
-                            <td>{{$medicina->precio}}</td>
-                            <td>{{$medicina->cantidad}}</td>
+                            <th class="text-center">{{$medicina->id}}</th>
+                            <td class="text-center">{{$medicina->NombreMedicamento}}</td>
+                            <td class="text-center">{{$medicina->TipoMedicamento}}</td>
+                            <td class="text-center">{{$medicina->ContenidoMedicamento}}</td>
+                            <td class="text-center">${{$medicina->PrecioMedicamento}}</td>
+                            <td class="text-center">{{$medicina->cantidad}}</td>
                             <td>
                                 <div class="btn-group">
             
-                                <a class="btn btn-primary" href="{{ route('medicinas.show',$medicina) }}">+</a>
-                                <a class="btn btn-warning" href="{{ route('medicinas.edit',$medicina) }}">Editar</a>
+                                    <a class="btn btn-primary" href="{{ route('medicinas.show',$medicina) }}">+</a>
+                                    <a class="btn btn-warning" href="{{ route('medicinas.edit',$medicina) }}">Editar</a>
             
-                                <form action="{{ route('medicinas.destroy', $medicina->id) }}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                    <input type="submit" value="Eliminar" class="btn btn-danger">
-                                </form>
+                                        <form action="{{ route('medicinas.destroy', $medicina->id) }}" method="POST">
+                                                @method('DELETE')
+                                                @csrf
+                                            <input type="submit" value="Eliminar" class="btn btn-danger">
+                                        </form>
                                 </div>
                             </td>
                                      
