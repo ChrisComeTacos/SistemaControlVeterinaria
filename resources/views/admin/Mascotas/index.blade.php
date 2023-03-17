@@ -56,10 +56,12 @@
                             <th class="text-center">Nombre del dueño</th>
                             <th class="text-center">Apellido P.</th>
                             <th class="text-center">Apellido M.</th>
+                            <th class="text-center">Telefono</th>
                             <th class="text-center">Nombre de mascota</th>
                             <th class="text-center">Especie</th>
                             <th class="text-center">Raza</th>
                             <th class="text-center">Peso</th>
+                            <th class="text-center">Asistencia</th>
                             <th class="text-center"></th>
                     </thead>
                     <tbody class="table-group-divider">
@@ -69,10 +71,12 @@
                                 <td class="text-center">{{$mascota->NombreDueno}}</td>
                                 <td class="text-center">{{$mascota->ApellidoP}}</td>
                                 <td class="text-center">{{$mascota->ApellidoM}}</td>
+                                <td class="text-center">{{$mascota->TelefonoDueno}}</td>
                                 <td class="text-center">{{$mascota->NombreMascota}}</td>
                                 <td class="text-center">{{$mascota->EspecieMascota}}</td>
                                 <td class="text-center">{{$mascota->RazaMascota}}</td>
                                 <td class="text-center">{{$mascota->PesoMascota}} Kg.</td>
+                                <td class="text-center">{{$mascota->AsistenciaStatus}}</td>
                                 <td>
                                     <div class="btn-group">
                 

@@ -7,15 +7,21 @@
     <form action="{{ route('medicinas.update',$medicina) }}" method="POST">
         @csrf
         @method('PUT')
-        <div>
-            <label for="">Nombre del medicamento</label>
-            <input type="text" name="NombreMedicamento" value="{{$medicina->NombreMedicamento}}" class="form-control">
-        </div>
-
-        <div>
-            <label for="">Tipo del medicamento</label>
-            <input type="text" name="TipoMedicamento" value="{{$medicina->TipoMedicamento}}" class="form-control">
-        </div>
+        <div class="input-group">
+            <input type="text" name="NombreMedicamento" value="{{$medicina->NombreMedicamento}}" class="form-control" placeholder="Nombre">
+                <select name="TipoMedicamento" class="form-select" id="inputGroupSelect01">
+                    <option selected>{{$medicina->TipoMedicamento}}</option>
+                    <option value="Pastillas/Capsulas">Pastillas/Capsulas</option>
+                    <option value="Solucion oral">Solucion oral</option>
+                    <option value="Unguento">Unguento</option>
+                    <option value="Crema">Crema</option>
+                    <option value="Crema">Gotas oftalmicas</option>
+                    <option value="Inyeccion">Inyeccion</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Polvo">Polvo</option>
+                    <option value="Aerosol">Aerosol</option>
+                </select>            
+          </div>
 
         <div>
             <label for="">Contenido del medicamento</label>

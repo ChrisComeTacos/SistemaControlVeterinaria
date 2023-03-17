@@ -18,10 +18,12 @@ return new class extends Migration
             $table->string('NombreDueno');
             $table->string('ApellidoP');
             $table->string('ApellidoM');
+            $table->bigInteger('TelefonoDueno');
             $table->string('NombreMascota');
             $table->string('EspecieMascota');
             $table->string('RazaMascota');
-            $table->string('PesoMascota');
+            $table->string('PesoMascota')->nullable();
+            $table->string('AsistenciaStatus')->default('En espera');
             $table->timestamps();
         });
     }

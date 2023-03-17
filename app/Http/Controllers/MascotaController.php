@@ -39,11 +39,12 @@ class MascotaController extends Controller
         $mascota->NombreDueno = $request->NombreDueno;
         $mascota->ApellidoP = $request->ApellidoP;
         $mascota->ApellidoM = $request->ApellidoM;
+        $mascota->TelefonoDueno = $request->TelefonoDueno;
         $mascota->NombreMascota = $request->NombreMascota;
         $mascota->EspecieMascota = $request->EspecieMascota;
         $mascota->RazaMascota = $request->RazaMascota;
         $mascota->PesoMascota = $request->PesoMascota;
-
+        
         $mascota->save();
 
         return redirect()->route('mascotas.index');
@@ -61,8 +62,8 @@ class MascotaController extends Controller
         public function pdf() {
 
         $mascota=Mascota::all();
-        $pdf = PDF::loadView('admin.mascotas.pdf', \compact('mascota'));
-        return $pdf->stream();
+        $pdf = PDF::loadView('admin.mascotas.pdf', compact('mascota'));
+        return $pdf->stream('');
     }
 
     public function edit($mascota)
@@ -77,13 +78,10 @@ class MascotaController extends Controller
     public function update(Request $request, $mascota)
     {
         $mascota = Mascota::find($mascota);
-        $mascota->NombreDueno = $request->NombreDueno;
-        $mascota->ApellidoP = $request->ApellidoP;
-        $mascota->ApellidoM = $request->ApellidoM;
-        $mascota->NombreMascota = $request->NombreMascota;
         $mascota->EspecieMascota = $request->EspecieMascota;
         $mascota->RazaMascota = $request->RazaMascota;
         $mascota->PesoMascota = $request->PesoMascota;
+        $mascota->AsistenciaStatus = $request->AsistenciaStatus;
 
         $mascota->save();
         return redirect()->route('mascotas.index');

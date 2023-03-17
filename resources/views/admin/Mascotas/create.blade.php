@@ -7,7 +7,7 @@
     <div class="row row align-items-center">
         <div class="col-6">
 
-            <h1 class="m-5">Ingresa los datos de la medicina</h1>
+            <h1 class="m-5">Ingresa tus datos y el de la mascota</h1>
 
             <form action="{{ route('mascotas.store') }}" style="width: 600px; height: 300px," class="m-5 justify-content-center align-items-center" method="POST">
                 @csrf
@@ -26,6 +26,10 @@
                 </div>
 
                 <div>
+                    <input type="text" name="TelefonoDueno" class="form-control mb-3" placeholder="Teléfono del dueño">
+                </div>
+
+                <div>
                     <input type="text" name="NombreMascota" class="form-control mb-3" placeholder="Nombre de la mascota">
                 </div>
 
@@ -37,10 +41,10 @@
                     <input type="text" name="RazaMascota" class="form-control mb-3" placeholder="Raza">
                 </div>
                 
-                <div class="input-group mb-3">
+                {{-- <div class="input-group mb-3">
                     <input type="text" class="form-control" name="PesoMascota" aria-label="Amount (to the nearest dollar)" placeholder="Peso">
                     <span class="input-group-text">Kg.</span>
-                </div>
+                </div> --}}
 
                 <div class="d-grid gap-2 d-md-block">
                     <button class="btn btn-success" type="submit" value="agregar">Agregar</button>
