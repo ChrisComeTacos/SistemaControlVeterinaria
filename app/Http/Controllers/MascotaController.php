@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Barryvdh\DomPDF\Facade\PDF;
 use App\Models\Mascota;
 use Illuminate\Http\Request;
+
 
 class MascotaController extends Controller
 {
@@ -23,12 +25,6 @@ class MascotaController extends Controller
             'busqueda' =>$busqueda,
         ];
         return view ('admin.mascotas.index',$data);
-    }
-
-    public function pdf() {
-
-        return view('admin.mascotas.pdf');
-
     }
 
     public function create()
@@ -60,6 +56,13 @@ class MascotaController extends Controller
             'mascota'=>$mascota,
         ];
         return view('admin.mascotas.show',compact('mascota'));
+    }
+
+        public function pdf() {
+
+        $mascota=Mascota::all();
+        $pdf = PDF::loadView('admin.mascotas.pdf', \compact('mascota'));
+        return $pdf->stream();
     }
 
     public function edit($mascota)

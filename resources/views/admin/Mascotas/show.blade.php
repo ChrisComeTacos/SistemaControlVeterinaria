@@ -70,7 +70,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-                <a class="btn btn-primary" href="#">Descargar PDF</a>
+                <a class="btn btn-primary" href="{{ route('mascotas.pdf')}}">Descargar PDF</a>
             </div>
           </div>
     
