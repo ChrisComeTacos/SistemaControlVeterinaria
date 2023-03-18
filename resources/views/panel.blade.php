@@ -18,7 +18,7 @@
         <a class="nav-link text-white " href="#">Nuestra ubicación</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white " href="{{ route('AgendarCita')}}">Agenda una cita</a>
+        <a class="nav-link text-white " href="{{ route('mascotas.create')}}">Agenda una cita</a>
       </li>
     </ul>
     

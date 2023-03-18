@@ -27,7 +27,7 @@ Route::get('/inicio', function(){
     return view('panel');
 })->name('inicio');  
 
-Route::get('mascotas/pdf',[MascotaController::class,'pdf'])->middleware('auth.admin')->name('mascotas.pdf');
+Route::get('mascotas/{id}/pdf',[MascotaController::class,'pdf'])->middleware('auth.admin')->name('mascotas.pdf');
 
 
 // RUTAS DE REGISTER
@@ -55,8 +55,8 @@ Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin'
 
 // RUTAS DE MASCOTAS
 Route::get('mascotas',[MascotaController::class,'index'])->middleware('auth.admin')->name('mascotas.index');
-Route::get('mascotas/create',[MascotaController::class,'create'])->middleware('auth.admin')->name('mascotas.create');
-Route::post('mascotas',[MascotaController::class,'store'])->middleware('auth.admin')->name('mascotas.store');
+Route::get('mascotas/create',[MascotaController::class,'create'])->name('mascotas.create');
+Route::post('mascotas',[MascotaController::class,'store'])->name('mascotas.store');
 Route::get('mascotas/{id}',[MascotaController::class,'show'])->middleware('auth.admin')->name('mascotas.show');
 Route::get('mascotas/{id}/edit',[MascotaController::class,'edit'])->middleware('auth.admin')->name('mascotas.edit');
 Route::put('mascotas/{id}',[MascotaController::class,'update'])->middleware('auth.admin')->name('mascotas.update');

@@ -29,7 +29,7 @@ class MascotaController extends Controller
 
     public function create()
     {
-        return view('admin.mascotas.create');
+        return view('create');
     }
 
     public function store(Request $request)
@@ -44,6 +44,8 @@ class MascotaController extends Controller
         $mascota->EspecieMascota = $request->EspecieMascota;
         $mascota->RazaMascota = $request->RazaMascota;
         $mascota->PesoMascota = $request->PesoMascota;
+        $mascota->FechaCita = $request->FechaCita;
+
         
         $mascota->save();
 
@@ -59,9 +61,12 @@ class MascotaController extends Controller
         return view('admin.mascotas.show',compact('mascota'));
     }
 
-        public function pdf() {
+        public function pdf($mascota) {
 
-        $mascota=Mascota::all();
+        $mascota=Mascota::find($mascota);
+        $data = [
+            'mascota'=>$mascota,
+        ];
         $pdf = PDF::loadView('admin.mascotas.pdf', compact('mascota'));
         return $pdf->stream('');
     }

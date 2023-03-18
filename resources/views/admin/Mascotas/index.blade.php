@@ -27,7 +27,6 @@
             <div class="col-sm-4">
 
                 <div class="p-2" >
-                    <a class="btn btn-success" href="{{ route('mascotas.create') }}">Agregar</a>
                     <a class="btn btn-light" href="{{ route('admin.index') }}">Volver</a>
                 </div>
 
@@ -61,6 +60,7 @@
                             <th class="text-center">Especie</th>
                             <th class="text-center">Raza</th>
                             <th class="text-center">Peso</th>
+                            <th class="text-center">Fecha de cita</th>
                             <th class="text-center">Asistencia</th>
                             <th class="text-center"></th>
                     </thead>
@@ -75,7 +75,8 @@
                                 <td class="text-center">{{$mascota->NombreMascota}}</td>
                                 <td class="text-center">{{$mascota->EspecieMascota}}</td>
                                 <td class="text-center">{{$mascota->RazaMascota}}</td>
-                                <td class="text-center">{{$mascota->PesoMascota}} Kg.</td>
+                                <td class="text-center">{{$mascota->PesoMascota}}</td>
+                                <td class="text-center text-primary">{{$mascota->FechaCita}}</td>
                                 <td class="text-center">{{$mascota->AsistenciaStatus}}</td>
                                 <td>
                                     <div class="btn-group">
@@ -96,7 +97,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="9"> {{$mascotas->appends(['busqueda'=>$busqueda])}}</td>
+                            <td colspan="12"> {{$mascotas->appends(['busqueda'=>$busqueda])}}</td>
                         </tr>
                     </tfoot>
                 </table>

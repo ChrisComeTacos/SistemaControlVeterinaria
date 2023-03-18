@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('RazaMascota');
             $table->string('PesoMascota')->nullable();
             $table->string('AsistenciaStatus')->default('En espera');
+            $table->date('FechaCita');
             $table->timestamps();
         });
     }

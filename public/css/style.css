@@ -198,6 +198,25 @@ a:hover {
     background-position: right;
 }
 
+input[type="date"] {
+    background-color: #0080ff;
+    padding: 10px;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+::webkit-calendar-picker-indicator {
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
 @media screen and (max-width: 1050px) {
     .container {
         grid-gap: 5rem;
@@ -229,6 +248,14 @@ a:hover {
     }
 
     .wave {
+        display: none;
+    }
+
+    .wave2 {
+        display: none;
+    }
+
+    .illustration {
         display: none;
     }
 

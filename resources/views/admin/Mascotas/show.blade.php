@@ -6,17 +6,7 @@
 
 <div class="p-3 d-flex mb-3">
 
-    <div class="me-auto p-2">
 
-        <select class="form-select" aria-label="Default select example">
-
-            <option selected>ID de paciente</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-
-    </div>
 
     <div class="p-2">
         <a class="btn btn-light" href="{{ route('mascotas.index') }}">Volver</a>
@@ -70,7 +60,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-                <a class="btn btn-primary" href="{{ route('mascotas.pdf')}}">Descargar PDF</a>
+                <a class="btn btn-primary" href="{{ route('mascotas.pdf', $mascota)}}">Descargar PDF</a>
             </div>
           </div>
     

@@ -31,8 +31,16 @@
                 
                 </div>
             
-                <div>
-                    <input type="text" name="ContenidoMedicamento" class="form-control mb-3" placeholder="Contenido dentro">
+                <div class="input-group mb-3">
+                    <div class="input-group">
+                        <input type="text" name="ContenidoMedicamento" class="form-control" placeholder="Cantidad">
+                            <select name="" class="form-select" id="inputGroupSelect01">
+                                <option value="Ml">Mililitro/s</option>
+                                <option value="Mg">Miligramo/s</option>
+                                <option value="g">Gramo/s</option>
+                            </select>            
+                      </div>
+                
                 </div>
         
                     <div class="input-group mb-3">
