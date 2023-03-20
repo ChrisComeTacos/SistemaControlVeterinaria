@@ -1,0 +1,30 @@
+{{-- INICIO--}}
+
+@extends('layouts.app')
+
+@section('CuerpoInicio')
+
+<section class="parallax">
+  <img src="img/Parallax/hill1.png" id="hill1">
+  <img src="img/Parallax/hill2.png" id="hill2">
+  <img src="img/Parallax/hill3.png" id="hill3">
+  <img src="img/Parallax/hill4.png" id="hill4">
+  <img src="img/Parallax/hill5.png" id="hill5">
+  <img src="img/Parallax/tree.png" id="tree">
+  <h2 id="text">Bienvenido a la veterinaria</h2>
+  <img src="img/Parallax/leaf.png" id="leaf">
+  <img src="img/Parallax/plant.png" id="plant">
+</section>
+
+<section class="sec">
+  <h2>Parallax Scrolling Website</h2>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam molestias sequi magni architecto? At debitis modi quis harum consequuntur veniam ea fugiat sint fugit unde libero, reiciendis officiis quisquam ab atque saepe, fuga ad aperiam vero asperiores optio adipisci eius rem deserunt? Error libero nemo expedita odit impedit illum sit dicta! Magni quisquam accusamus similique harum asperiores est non at facilis aliquid. Exercitationem in incidunt earum porro delectus veniam, iure ipsa maiores a, voluptatem commodi ipsum aut adipisci maxime voluptatibus nobis illo dignissimos quod similique aspernatur! Animi nam totam modi ullam voluptatem blanditiis illo necessitatibus odio esse dolore voluptatibus magni architecto recusandae temporibus ipsam, a alias odit adipisci voluptas eos veritatis repudiandae assumenda. Similique qui quod quo suscipit. Magni ut molestias assumenda dicta quia excepturi ad voluptate suscipit rem error. <br><br>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam molestias sequi magni architecto? At debitis modi quis harum consequuntur veniam ea fugiat sint fugit unde libero, reiciendis officiis quisquam ab atque saepe, fuga ad aperiam vero asperiores optio adipisci eius rem deserunt? Error libero nemo expedita odit impedit illum sit dicta! Magni quisquam accusamus similique harum asperiores est non at facilis aliquid. Exercitationem in incidunt earum porro delectus veniam, iure ipsa maiores a, voluptatem commodi ipsum aut adipisci maxime voluptatibus nobis illo dignissimos quod similique aspernatur! Animi nam totam modi ullam voluptatem blanditiis illo necessitatibus odio esse dolore voluptatibus magni architecto recusandae temporibus ipsam, a alias odit adipisci voluptas eos veritatis repudiandae assumenda. Similique qui quod quo suscipit. Magni ut molestias assumenda dicta quia excepturi ad voluptate suscipit rem error. <br><br>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam molestias sequi magni architecto? At debitis modi quis harum consequuntur veniam ea fugiat sint fugit unde libero, reiciendis officiis quisquam ab atque saepe, fuga ad aperiam vero asperiores optio adipisci eius rem deserunt? Error libero nemo expedita odit impedit illum sit dicta! Magni quisquam accusamus similique harum asperiores est non at facilis aliquid. Exercitationem in incidunt earum porro delectus veniam, iure ipsa maiores a, voluptatem commodi ipsum aut adipisci maxime voluptatibus nobis illo dignissimos quod similique aspernatur! Animi nam totam modi ullam voluptatem blanditiis illo necessitatibus odio esse dolore voluptatibus magni architecto recusandae temporibus ipsam, a alias odit adipisci voluptas eos veritatis repudiandae assumenda. Similique qui quod quo suscipit. Magni ut molestias assumenda dicta quia excepturi ad voluptate suscipit rem error. <br><br>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam molestias sequi magni architecto? At debitis modi quis harum consequuntur veniam ea fugiat sint fugit unde libero, reiciendis officiis quisquam ab atque saepe, fuga ad aperiam vero asperiores optio adipisci eius rem deserunt? Error libero nemo expedita odit impedit illum sit dicta! Magni quisquam accusamus similique harum asperiores est non at facilis aliquid. Exercitationem in incidunt earum porro delectus veniam, iure ipsa maiores a, voluptatem commodi ipsum aut adipisci maxime voluptatibus nobis illo dignissimos quod similique aspernatur! Animi nam totam modi ullam voluptatem blanditiis illo necessitatibus odio esse dolore voluptatibus magni architecto recusandae temporibus ipsam, a alias odit adipisci voluptas eos veritatis repudiandae assumenda. Similique qui quod quo suscipit. Magni ut molestias assumenda dicta quia excepturi ad voluptate suscipit rem error. <br><br>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam molestias sequi magni architecto? At debitis modi quis harum consequuntur veniam ea fugiat sint fugit unde libero, reiciendis officiis quisquam ab atque saepe, fuga ad aperiam vero asperiores optio adipisci eius rem deserunt? Error libero nemo expedita odit impedit illum sit dicta! Magni quisquam accusamus similique harum asperiores est non at facilis aliquid. Exercitationem in incidunt earum porro delectus veniam, iure ipsa maiores a, voluptatem commodi ipsum aut adipisci maxime voluptatibus nobis illo dignissimos quod similique aspernatur! Animi nam totam modi ullam voluptatem blanditiis illo necessitatibus odio esse dolore voluptatibus magni architecto recusandae temporibus ipsam, a alias odit adipisci voluptas eos veritatis repudiandae assumenda. Similique qui quod quo suscipit. Magni ut molestias assumenda dicta quia excepturi ad voluptate suscipit rem error. <br><br>
+  </p>
+</section>
+  
+@endsection

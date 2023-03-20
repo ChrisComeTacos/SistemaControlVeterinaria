@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Veterinaria</title>
+
+    {{-- ESTILOS --}}
+    <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
+
+    {{-- FUENTE --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <header>
+        <h2 class="logo">Veterinaria</h2>
+        <nav class="navigation">
+            <a href="#" class="active">Inicio</a>
+            <a href="#">Contacto</a>
+            <a href="#">Galería</a>
+            <a href="#">Agendar cita</a>
+        </nav>
+      </header>
+
+    @yield('CuerpoInicio')
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+----------JAVASCRIPT----------
+
+let text = document.getElementById("text");
+let leaf = document.getElementById("leaf");
+let hill1 = document.getElementById("hill1");
+let hill4 = document.getElementById("hill4");
+let hill5 = document.getElementById("hill5");
+
+window.addEventListener("scroll", () => {
+    let value = window.scrollY;
+
+    text.style.marginTop = value * 2.5 + "px";
+    leaf.style.top = value * -0.8 + "px";
+    leaf.style.left = value * 0.8 + "px";
+    hill5.style.left = value * 0.8 + "px";
+    hill4.style.left = value * -0.8 + "px";
+    hill1.style.top = value * 0.8 + "px";
+});

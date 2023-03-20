@@ -1,49 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Veterinaria</title>
 
-    <title>@yield('title') - Veterinaria </title>
+    {{-- ESTILOS --}}
+    <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
+
+    {{-- FUENTE --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS Link -->
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
+</head>
+<body>
 
-    <!-- Fontawesome Link -->
-    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
- 
-  </head>
-  <body class="bg-gray-100 text-gray-800">
+    <header>
+        
+        <h2 class="logo">Veterinaria</h2>
+        <div class="menu"></div>
+        
+        <nav class="navigation">
+            <a href="{{ route('inicio')}}">Inicio</a>
+            <a href="{{ route('contacto')}}">Contacto</a>
+            <a href="#">Galería</a>
+            <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a>
+          </nav>
 
-    <nav class="flex py-5 bg-indigo-500 text-white">
-        <div class="w-1-2 px-12 mr-auto">
-            <h2 class="text-2xl font-bold">Sistema Web Veterinaria</h2>
-        </div>
-
-        <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
-            @if(auth()->check())
-            <li class="mx-8">
-                <p class="text-xl">Bienvenido <b>{{ auth()->user()->name }}</b></p>
-            </li>
-            <li>
-                <a href="{{ route('login.destroy') }}" class="font-bold py-3 px-4 rounded-md bg-red-500 hover:bg-red-600">Log Out</a>
-            </li>
+        {{-- @if(auth()->check())
+  
+            </a>
+        
+            <h2 class="logo">Veterinaria</h2>
+            <div class="menu"></div>
+            
+            <nav class="navigation">
+                <a>Bienvenido <b>{{ auth()->user()->name }}</b></a>
+                <a href="{{ route('inicio')}}">Inicio</a>
+                <a href="{{ route('contacto')}}">Contacto</a>
+                <a href="#">Galería</a>
+                <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a>
+                <a href="{{ route('login.destroy') }}">
+                    <button>Log Out</button>
+            </nav>
+            
             @else
-
-                <li>
-                    <a href="{{ route('login.index') }}" class="font-semibold hover:bg-indigo-700 py-3 px-4 rounded-md">Log In</a>
-                    <a href="{{ route('register.index') }}" class="font-semibold hover:bg-indigo-700 py-3 px-4 rounded-md">Register</a>
-                </li>
-
-            @endif
-        </ul>
-
-
-    </nav>
-
-    @yield('content')
   
-  
-  </body>
+            <h2 class="logo">Veterinaria</h2>
+            <div class="menu"></div>
+            
+            <nav class="navigation">
+                <a href="{{ route('inicio')}}">Inicio</a>
+                <a href="{{ route('contacto')}}">Contacto</a>
+                <a href="#">Galería</a>
+                <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a>
+                <a href="{{ route('login.index') }}">Log In</a>
+                <a href="{{ route('register.index') }}">Register</a>
+              </nav>
+            @endif --}}
+
+      </header>
+
+
+
+      @yield('CuerpoInicio')
+
+
+    <script src="js/script.js"></script>
+</body>
 </html>

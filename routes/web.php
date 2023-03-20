@@ -20,12 +20,16 @@ use App\Http\Controllers\SuministroController;
 */
 
 Route::get('/', function () {
-    return view('panel');
+    return view('welcome');
 })->middleware('auth');
 
 Route::get('/inicio', function(){
-    return view('panel');
-})->name('inicio');  
+    return view('welcome');
+})->name('inicio');
+
+Route::get('/contactanos', function(){
+    return view('contacto');
+})->name('contacto');  
 
 Route::get('mascotas/{id}/pdf',[MascotaController::class,'pdf'])->middleware('auth.admin')->name('mascotas.pdf');
 
@@ -46,7 +50,7 @@ Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('auth'
 // RUTAS DE INICIO 
 
 Route::get('/citas', function(){
-    return view('citas');
+    return view('create');
 })->name('AgendarCita');  
 
 // RUTAS DE ADMIN
@@ -84,8 +88,8 @@ Route::delete('suministros/{id}',[SuministroController::class,'destroy'])->middl
 
 // RUTAS DE CITAS MÉDICAS
 
-Route::get('/reservarcitas/create',[AppointmentController::class,'create'])->middleware('auth.admin')->name('ReservarCita');
-Route::post('/miscitas',[AppointmentController::class,'store'])->middleware('auth.admin')->name('ReservarCita');
+// Route::get('/reservarcitas/create',[AppointmentController::class,'create'])->middleware('auth.admin')->name('ReservarCita');
+// Route::post('/miscitas',[AppointmentController::class,'store'])->middleware('auth.admin')->name('ReservarCita');
 
 // RUTAS DE RECETAS MÉDICAS
 
