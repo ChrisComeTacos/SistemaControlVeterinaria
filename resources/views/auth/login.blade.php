@@ -1,8 +1,43 @@
-@extends('layouts.inicio')
+@extends('layouts.app')
 
 @section('title', 'Login')
 
-@section('content')
+@section('secciones')
+
+<header>
+
+  @if(auth()->check())
+
+      <h2 class="logo">Veterinaria</h2>
+      <div class="menu"></div>
+      
+      <nav class="navigation">
+              <a>¡Bienvenido, <b>{{ auth()->user()->name }}!</b></a>
+              <a href="{{ route('inicio')}}">Inicio</a>
+              <a href="{{ route('contacto')}}">Contacto</a>
+              <a href="{{ route('AgendarCita')}}">Agendar cita</a>
+              <a href="{{ route('login.destroy') }}">Log Out</a>
+      </nav>
+      
+      @else
+
+      <h2 class="logo">Veterinaria</h2>
+      <div class="menu"></div>
+      
+      <nav class="navigation">
+          <a href="{{ route('inicio')}}">Inicio</a>
+          <a href="{{ route('contacto')}}">Contacto</a>
+          {{-- <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a> --}}
+          <a href="{{ route('login.index') }}" class="active">Iniciar sesión</a>
+          <a href="{{ route('register.index') }}">Registrarse</a>
+        </nav>
+      @endif
+
+</header>
+  
+@endsection
+
+@section('CuerpoInicio')
 
 <img class="wave" src="img/fondoLogin.png">
 

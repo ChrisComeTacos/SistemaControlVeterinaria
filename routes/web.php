@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\MedicinaController;
 use App\Http\Controllers\SuministroController;
+use App\Http\Controllers\EspecieController;
+use App\Http\Controllers\ConsultaController;
+// use App\Http\Controllers\MascotaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +34,7 @@ Route::get('/contactanos', function(){
     return view('contacto');
 })->name('contacto');  
 
-Route::get('mascotas/{id}/pdf',[MascotaController::class,'pdf'])->middleware('auth.admin')->name('mascotas.pdf');
+Route::get('consultas/{id}/pdf',[ConsultaController::class,'pdf'])->middleware('auth.admin')->name('consultas.pdf');
 
 
 // RUTAS DE REGISTER
@@ -50,7 +53,7 @@ Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('auth'
 // RUTAS DE INICIO 
 
 Route::get('/citas', function(){
-    return view('create');
+    return view('citas');
 })->name('AgendarCita');  
 
 // RUTAS DE ADMIN
@@ -58,13 +61,13 @@ Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin'
 
 
 // RUTAS DE MASCOTAS
-Route::get('mascotas',[MascotaController::class,'index'])->middleware('auth.admin')->name('mascotas.index');
-Route::get('mascotas/create',[MascotaController::class,'create'])->name('mascotas.create');
-Route::post('mascotas',[MascotaController::class,'store'])->name('mascotas.store');
-Route::get('mascotas/{id}',[MascotaController::class,'show'])->middleware('auth.admin')->name('mascotas.show');
-Route::get('mascotas/{id}/edit',[MascotaController::class,'edit'])->middleware('auth.admin')->name('mascotas.edit');
-Route::put('mascotas/{id}',[MascotaController::class,'update'])->middleware('auth.admin')->name('mascotas.update');
-Route::delete('mascotas/{id}',[MascotaController::class,'destroy'])->middleware('auth.admin')->name('mascotas.destroy');
+// Route::get('mascotas',[MascotaController::class,'index'])->middleware('auth.admin')->name('mascotas.index');
+// Route::get('mascotas/create',[MascotaController::class,'create'])->name('mascotas.create');
+// Route::post('mascotas',[MascotaController::class,'store'])->name('mascotas.store');
+// Route::get('mascotas/{id}',[MascotaController::class,'show'])->middleware('auth.admin')->name('mascotas.show');
+// Route::get('mascotas/{id}/edit',[MascotaController::class,'edit'])->middleware('auth.admin')->name('mascotas.edit');
+// Route::put('mascotas/{id}',[MascotaController::class,'update'])->middleware('auth.admin')->name('mascotas.update');
+// Route::delete('mascotas/{id}',[MascotaController::class,'destroy'])->middleware('auth.admin')->name('mascotas.destroy');
 
 // RUTAS DE MEDICINAS
 
@@ -86,10 +89,23 @@ Route::get('suministros/{id}/edit',[SuministroController::class,'edit'])->middle
 Route::put('suministros/{id}',[SuministroController::class,'update'])->middleware('auth.admin')->name('suministros.update');
 Route::delete('suministros/{id}',[SuministroController::class,'destroy'])->middleware('auth.admin')->name('suministros.destroy');
 
-// RUTAS DE CITAS MÉDICAS
+// RUTAS DE ESPECIES
 
-// Route::get('/reservarcitas/create',[AppointmentController::class,'create'])->middleware('auth.admin')->name('ReservarCita');
-// Route::post('/miscitas',[AppointmentController::class,'store'])->middleware('auth.admin')->name('ReservarCita');
+Route::get('especies',[EspecieController::class,'index'])->middleware('auth.admin')->name('especies.index');
+Route::get('especies/create',[EspecieController::class,'create'])->middleware('auth.admin')->name('especies.create');
+Route::post('especies',[EspecieController::class,'store'])->middleware('auth.admin')->name('especies.store');
+Route::get('especies/{id}',[EspecieController::class,'show'])->middleware('auth.admin')->name('especies.show');
+Route::get('especies/{id}/edit',[EspecieController::class,'edit'])->middleware('auth.admin')->name('especies.edit');
+Route::put('especies/{id}',[EspecieController::class,'update'])->middleware('auth.admin')->name('especies.update');
+Route::delete('especies/{id}',[EspecieController::class,'destroy'])->middleware('auth.admin')->name('especies.destroy');
 
-// RUTAS DE RECETAS MÉDICAS
+//RUTA DE CONSULTAS
+
+Route::get('consultas',[ConsultaController::class,'index'])->middleware('auth.admin')->name('consultas.index');
+Route::get('consultas/create',[ConsultaController::class,'create'])->name('consultas.create');
+Route::post('consultas',[ConsultaController::class,'store'])->name('consultas.store');
+Route::get('consultas/{id}',[ConsultaController::class,'show'])->middleware('auth.admin')->name('consultas.show');
+Route::get('consultas/{id}/edit',[ConsultaController::class,'edit'])->middleware('auth.admin')->name('consultas.edit');
+Route::put('consultas/{id}',[ConsultaController::class,'update'])->middleware('auth.admin')->name('consultas.update');
+Route::delete('consultas/{id}',[ConsultaController::class,'destroy'])->middleware('auth.admin')->name('consultas.destroy');
 

@@ -15,8 +15,8 @@
                 <div class="input-group mb-3">
                     <div class="input-group">
                         <input type="text" name="NombreMedicamento" class="form-control" placeholder="Nombre">
+
                             <select name="TipoMedicamento" class="form-select" id="inputGroupSelect01">
-                                <option selected>Tipo</option>
                                 <option value="Pastillas/Capsulas">Pastillas/Capsulas</option>
                                 <option value="Solucion oral">Solucion oral</option>
                                 <option value="Unguento">Unguento</option>
@@ -28,30 +28,56 @@
                                 <option value="Aerosol">Aerosol</option>
                             </select>            
                       </div>
+
+                      @error('NombreMedicamento')
+                      <small>
+                          <strong>¡El campo debe estar lleno!</strong>
+                      </small>
+                      @enderror
                 
                 </div>
             
                 <div class="input-group mb-3">
                     <div class="input-group">
                         <input type="text" name="ContenidoMedicamento" class="form-control" placeholder="Cantidad">
-                            <select name="" class="form-select" id="inputGroupSelect01">
-                                <option value="Ml">Mililitro/s</option>
-                                <option value="Mg">Miligramo/s</option>
-                                <option value="g">Gramo/s</option>
-                            </select>            
-                      </div>
+                        <select name="medida" class="form-select" id="inputGroupSelect01">
+                            <option value="Ml">Mililitro/s</option>
+                            <option value="Mg">Miligramo/s</option>
+                            <option value="g">Gramo/s</option>
+                        </select>            
+                    </div>
+                    @error('ContenidoMedicamento')
+                    <small>
+                        <strong>¡El campo debe estar lleno!</strong>
+                    </small>
+                    @enderror
                 
                 </div>
         
                     <div class="input-group mb-3">
-                        <span class="input-group-text">$</span>
-                        <input type="text" class="form-control" name="PrecioMedicamento" aria-label="Amount (to the nearest dollar)" placeholder="Precio">
-                        <span class="input-group-text">.00</span>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" name="PrecioMedicamento" aria-label="Amount (to the nearest dollar)" placeholder="Precio">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                        @error('PrecioMedicamento')
+                        <small>
+                            <strong>¡El campo debe estar lleno!</strong>
+                        </small>
+                        @enderror
                     </div>
+
             
                     <div class="input-group mb-3">
+                        <div class="input-group">
                         <input type="text" class="form-control" name="cantidad" aria-label="Amount (to the nearest dollar)" placeholder="Unidades">
                         <span class="input-group-text">Pz</span>
+                        </div>
+                        @error('cantidad')
+                        <small>
+                            <strong>¡El campo debe estar lleno!</strong>
+                        </small>
+                        @enderror
                     </div>
 
                 <div class="d-grid gap-2 d-md-block">

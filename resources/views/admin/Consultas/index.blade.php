@@ -14,7 +14,7 @@
 
                 <div class="p-2 flex-grow-1">
 
-                    <form action="{{ route('mascotas.index')}}" method="GET">
+                    <form action="{{ route('consultas.index')}}" method="GET">
                         <div class="btn-group">
                             <input type="text" name="busqueda" class="form-control">
                             <input type="submit" value="Buscar" class="btn btn-primary">
@@ -43,7 +43,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h1>Administración de mascotas</h1>
+            <h1>Administración de consultas</h1>
         </div>
         
         <div class="card-body">
@@ -68,27 +68,27 @@
                             <th class="text-center"></th>
                     </thead>
                     <tbody class="table-group-divider">
-                        @foreach ($mascotas as $mascota)
+                        @foreach ($consultas as $consulta)
                             <tr>
-                                <th class="text-center">{{$mascota->id}}</th>
-                                <td class="text-center">{{$mascota->NombreDueno}}</td>
-                                <td class="text-center">{{$mascota->ApellidoP}}</td>
-                                <td class="text-center">{{$mascota->ApellidoM}}</td>
-                                <td class="text-center">{{$mascota->TelefonoDueno}}</td>
-                                <td class="text-center">{{$mascota->NombreMascota}}</td>
-                                <td class="text-center">{{$mascota->EspecieMascota}}</td>
-                                <td class="text-center">{{$mascota->RazaMascota}}</td>
-                                <td class="text-center">{{$mascota->PesoMascota}}</td>
-                                <td class="text-center text-primary">{{$mascota->FechaCita}}</td>
-                                <td class="text-center">{{$mascota->AsistenciaStatus}}</td>
-                                <td class="text-center">{{$mascota->FotoMascota}}</td>
+                                <th class="text-center">{{$consulta->id}}</th>
+                                <td class="text-center">{{$consulta->NombreDueno}}</td>
+                                <td class="text-center">{{$consulta->ApellidoP}}</td>
+                                <td class="text-center">{{$consulta->ApellidoM}}</td>
+                                <td class="text-center">{{$consulta->TelefonoDueno}}</td>
+                                <td class="text-center">{{$consulta->NombreMascota}}</td>
+                                <td class="text-center">{{$consulta->EspecieMascota}}</td>
+                                <td class="text-center">{{$consulta->RazaMascota}}</td>
+                                <td class="text-center">{{$consulta->PesoMascota}}</td>
+                                <td class="text-center text-primary">{{$consulta->FechaCita}}</td>
+                                <td class="text-center">{{$consulta->AsistenciaStatus}}</td>
+                                <td class="text-center">{{$consulta->FotoMascota}}</td>
                                 <td>
                                     <div class="btn-group">
                 
-                                        <a class="btn btn-primary" href="{{ route('mascotas.pdf', $mascota)}}">Descargar receta</a>
-                                    <a class="btn btn-warning" href="{{ route('mascotas.edit',$mascota) }}">Editar</a>
+                                        <a class="btn btn-primary" href="{{ route('consultas.pdf', $consulta)}}">Descargar receta</a>
+                                    <a class="btn btn-warning" href="{{ route('consultas.edit',$consulta) }}">Editar</a>
                 
-                                    <form action="{{ route('mascotas.destroy', $mascota->id) }}" method="POST" class="formEliminar">
+                                    <form action="{{ route('consultas.destroy', $consulta->id) }}" method="POST" class="formEliminar">
                                             @method('DELETE')
                                             @csrf
                                         <input type="submit" value="Eliminar" class="btn btn-danger">
@@ -101,7 +101,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="12"> {{$mascotas->appends(['busqueda'=>$busqueda])}}</td>
+                            <td colspan="12"> {{$consultas->appends(['busqueda'=>$busqueda])}}</td>
                         </tr>
                     </tfoot>
                 </table>

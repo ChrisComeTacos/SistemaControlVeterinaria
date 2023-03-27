@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mascotas', function (Blueprint $table) {
+        Schema::create('consultas', function (Blueprint $table) {
             $table->id();
             $table->string('NombreDueno');
             $table->string('ApellidoP');
@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('PesoMascota')->nullable();
             $table->string('AsistenciaStatus')->default('En espera');
             $table->date('FechaCita');
+            $table->string('DiagnosticoMascota')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mascotas');
+        Schema::dropIfExists('consultas');
     }
 };

@@ -1,5 +1,40 @@
 @extends('layouts.app')
 
+@section('secciones')
+
+<header>
+
+  @if(auth()->check())
+
+      <h2 class="logo">Veterinaria</h2>
+      <div class="menu"></div>
+      
+      <nav class="navigation">
+              <a>¡Bienvenido, <b>{{ auth()->user()->name }}!</b></a>
+              <a href="{{ route('inicio')}}">Inicio</a>
+              <a href="{{ route('contacto')}}" class="active">Contacto</a>
+              <a href="{{ route('AgendarCita')}}">Agendar cita</a>
+              <a href="{{ route('login.destroy') }}">Log Out</a>
+      </nav>
+      
+      @else
+
+      <h2 class="logo">Veterinaria</h2>
+      <div class="menu"></div>
+      
+      <nav class="navigation">
+          <a href="{{ route('inicio')}}">Inicio</a>
+          <a href="{{ route('contacto')}}" class="active">Contacto</a>
+          {{-- <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a> --}}
+          <a href="{{ route('login.index') }}">Iniciar sesión</a>
+          <a href="{{ route('register.index') }}">Registrarse</a>
+        </nav>
+      @endif
+
+</header>
+  
+@endsection
+
 @section('CuerpoInicio')
 
 <h1>Estamos ubicados aqui</h1>

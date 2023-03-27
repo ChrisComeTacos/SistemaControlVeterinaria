@@ -50,7 +50,7 @@
                             <th class="text-center">{{$medicina->id}}</th>
                             <td class="text-center">{{$medicina->NombreMedicamento}}</td>
                             <td class="text-center">{{$medicina->TipoMedicamento}}</td>
-                            <td class="text-center">{{$medicina->ContenidoMedicamento}}</td>
+                            <td class="text-center">{{$medicina->ContenidoMedicamento}}{{$medicina->medida}}</td>
                             <td class="text-center">${{$medicina->PrecioMedicamento}}</td>
                             <td class="text-center">{{$medicina->cantidad}}</td>
                             <td>

@@ -9,7 +9,7 @@
 
 
     <div class="p-2">
-        <a class="btn btn-light" href="{{ route('mascotas.index') }}">Volver</a>
+        <a class="btn btn-light" href="{{ route('consultas.index') }}">Volver</a>
     </div>
 
 </div>
@@ -28,13 +28,13 @@
               <div class="row g-2 mb-3">
                 <div class="col-md">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nombre de la mascota" value="{{$mascota->NombreMascota}}">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nombre de la mascota" value="{{$consulta->NombreMascota}}">
                     <label for="floatingInputGrid">Nombre de la mascota</label>
                   </div>
                 </div>
                 <div class="col-md">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Raza" value="{{$mascota->EspecieMascota}}">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Raza" value="{{$consulta->EspecieMascota}}">
                     <label for="floatingInputGrid">Especie</label>
                   </div>
                 </div>
@@ -43,13 +43,13 @@
               <div class="row g-2 mb-3">
                 <div class="col-md">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nombre de la mascota" value="{{$mascota->RazaMascota}}">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nombre de la mascota" value="{{$consulta->RazaMascota}}">
                     <label for="floatingInputGrid">Raza</label>
                   </div>
                 </div>
                 <div class="col-md">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Raza" value="{{$mascota->PesoMascota}} Kg.">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Raza" value="{{$consulta->PesoMascota}} Kg.">
                     <label for="floatingInputGrid">Peso</label>
                   </div>
                 </div>
@@ -57,10 +57,10 @@
 
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Diagnóstico</label>
-                    <textarea name="DiagnosticoMascota" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{$mascota->DiagnosticoMascota}}"></textarea>
+                    <textarea name="DiagnosticoMascota" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{$consulta->DiagnosticoMascota}}"></textarea>
                 </div>
 
-                <a class="btn btn-primary" href="{{ route('mascotas.pdf', $mascota)}}">Descargar PDF</a>
+                <a class="btn btn-primary" href="{{ route('consultas.pdf', $consulta)}}">Descargar PDF</a>
             </div>
           </div>
     

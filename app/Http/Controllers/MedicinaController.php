@@ -28,6 +28,14 @@ class MedicinaController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'NombreMedicamento'=> 'required',
+            'TipoMedicamento'=> 'required',
+            'ContenidoMedicamento'=> 'required',
+            'PrecioMedicamento'=> 'required | numeric',
+            'cantidad'=> 'required | numeric',
+        ]);
+
         $medicina = new Medicina();
 
         $medicina->NombreMedicamento = $request->NombreMedicamento;

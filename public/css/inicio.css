@@ -9,8 +9,8 @@
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
-    background: #8ad8f7;
+    overflow: auto;
+    background: #fff;
 }
 
 /* HEADER */
@@ -20,7 +20,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 12px 80px 12px 50px;
+    padding: 12px 30px 12px 50px;
     background: rgb(250, 250, 250);
     display: flex;
     object-fit: cover;
@@ -48,6 +48,10 @@ header {
 .navigation a.active {
     background: #0d6efd;
     color: #fff;
+}
+
+#usuario {
+    display: inline-block;
 }
 
 /* SECTION */
@@ -92,7 +96,7 @@ section img {
 section #slogan {
     position: absolute;
     color: #0d6efd;
-    font-size: 4vmax;
+    font-size: 5vmax;
     text-align: center;
     /* line-height: 1em; */
     /* white-space: nowrap; */
@@ -145,9 +149,513 @@ section #btn:hover {
     color: #fff;
 }
 
+.sec2 {
+    background: #fff;
+    position: relative;
+    padding: 80px;
+}
+
+.sec2 h2 {
+    font-size: 3.5vw;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sec2 h3 {
+    font-size: 2vw;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.sec2 p {
+    font-size: 1.2vw;
+    color: black;
+}
+
+/* LOGIN Y REGISTRO */
+
+.wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+.wave2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+.tabla {
+    padding: 0 2rem;
+}
+
+.img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.login-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.img img {
+    width: 500px;
+}
+
+form {
+    width: 360px;
+}
+
+.login-content img {
+    height: 100px;
+}
+
+.login-content h2 {
+    margin: 15px 0;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.login-content .input-div {
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.login-content .input-div.one {
+    margin-top: 0;
+}
+
+.i {
+    color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i i {
+    transition: 0.3s;
+}
+
+.input-div > div {
+    position: relative;
+    height: 45px;
+}
+
+.input-div > div > h5 {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.input-div:before,
+.input-div:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #0d6efd;
+    transition: 0.4s;
+}
+
+.input-div:before {
+    right: 50%;
+}
+
+.input-div:after {
+    left: 50%;
+}
+
+.input-div.focus:before,
+.input-div.focus:after {
+    width: 50%;
+}
+
+.input-div.focus > div > h5 {
+    top: -5px;
+    font-size: 15px;
+}
+
+.input-div.focus > .i > i {
+    color: #0d6efd;
+}
+
+.input-div > div > input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    color: #555;
+    font-family: "poppins", sans-serif;
+}
+
+.input-div.pass {
+    margin-bottom: 4px;
+}
+
+/* a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #0d6efd;
+} */
+
+.loginBoton {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #0d6efd, #0d6efd, #0d6efd);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn:hover {
+    background-position: right;
+}
+
+/* CARDS ADMIN */
+
+.contenido {
+    width: 100vw;
+    height: 100vh;
+    margin: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+.contenido .card {
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    transform: translateX(80px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: #fff;
+}
+
+.contenido .card:hover {
+    transform: translateX(90px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contenido .card img {
+    width: 330px;
+    height: 220px;
+}
+
+.contenido .card h4 {
+    font-weight: 600;
+}
+
+.contenido .card p {
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.contenido .card a {
+    font-weight: 500;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+/* CITAS */
+
+.cita {
+    background-color: #fff;
+    width: 60%;
+    min-width: 420px;
+    padding: 35px 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cita h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #1c093c;
+}
+
+.cita p {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: #606060;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.cita form {
+    width: 100%;
+    position: relative;
+    margin: 30px auto 0 auto;
+}
+
+.cita .row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px 30px;
+    margin-bottom: 20px;
+}
+
+.cita label {
+    color: #1c093c;
+    font-size: 14px;
+}
+
+.cita textarea,
+input {
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1.2px solid #c4cae0;
+    margin-top: 5px;
+}
+
+.cita button {
+    font-size: 18px;
+    font-weight: 400;
+    background: #fff;
+    padding: 14px 22px;
+    border: none;
+    background: #4070f4;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cita button:hover {
+    background-color: #265df2;
+}
+
+.cita small p {
+    color: red;
+}
+
+.slider-frame {
+    width: 1280px;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+    width: 100%;
+    list-style: none;
+}
+
+.slider-frame img {
+    width: 1280px;
+    height: 720px;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+
+/* small,
+strong {
+    color: red;
+} */
+
+/* .cita button.show-modal,
+.modal-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 380px;
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 24px;
+    background-color: #fff;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-box i {
+    font-size: 70px;
+    color: ;
+}
+
+.modal-box h2 {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #333;
+}
+
+.modal-box h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+}
+
+.modal-box .buttons {
+    margin-top: 25px;
+}
+
+.modal-box button {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 0 10px;
+} */
+
 /* RESPONSIVE */
 
+@media screen and (max-width: 1050px) {
+    .container {
+        grid-gap: 5rem;
+    }
+
+    .contenido {
+        margin-top: 100px;
+    }
+
+    .slider-frame {
+        width: 900px;
+        height: auto;
+        margin: 50px auto 0;
+        overflow: hidden;
+    }
+
+    .slider-frame img {
+        width: 854px;
+        height: 480px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    form {
+        width: 290px;
+    }
+
+    .login-content h2 {
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+
+    .img img {
+        width: 400px;
+    }
+}
+
 @media (max-width: 991px) {
+    /* INICIO */
     .sec {
         padding: 60px;
     }
@@ -155,9 +663,19 @@ section #btn:hover {
         font-size: 1em;
     }
 
+    .sec2 {
+        padding: 60px;
+    }
+    .sec2 p {
+        font-size: 1em;
+    }
+
     header .navigation {
-        /* padding: 10px 80px 10px 50px; */
-        opacity: 0;
+        padding: 10px 80px 10px 50px;
+        /* display: flex;
+        justify-content: center;
+        text-align: center; */
+        opacity: 1;
     }
     nav a {
         display: none;
@@ -166,8 +684,8 @@ section #btn:hover {
     }
     nav.active a {
         position: relative;
-        top: 50px;
-        margin-left: -150px;
+        top: 10px;
+        margin-left: 50px;
         display: flex;
         opacity: 1;
         visibility: visible;
@@ -191,6 +709,10 @@ section #btn:hover {
         background-position: center;
         /* z-index: 100; */
     }
+
+    /* #p {
+        margin-left: -150px;
+    } */
     section #persona1,
     #persona2,
     #gato {
@@ -203,5 +725,73 @@ section #btn:hover {
     section #slogan {
         font-size: 5vmax;
         z-index: 0;
+    }
+
+    /* LOGIN Y REGISTRO */
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .wave {
+        display: none;
+    }
+
+    .wave2 {
+        display: none;
+    }
+
+    .illustration {
+        display: none;
+    }
+
+    .login-content {
+        top: -200px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 626px) {
+    header .navigation {
+        /* padding: 10px 80px 10px 50px; */
+        /* display: flex;
+            justify-content: center;
+            text-align: center; */
+        opacity: 1;
+    }
+    nav a {
+        display: none;
+        opacity: 1;
+        visibility: hidden;
+    }
+    nav.active a,
+    #usuario {
+        /* margin-bottom: 30px;
+        margin-right: 60px; */
+        position: relative;
+        top: 10px;
+        margin-left: -50px;
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+    .logo {
+        display: none;
+    }
+
+    .slider-frame {
+        width: 400px;
+        height: auto;
+        margin: 50px auto 0;
+        overflow: hidden;
+    }
+
+    .slider-frame img {
+        width: 600px;
+        height: 480px;
     }
 }

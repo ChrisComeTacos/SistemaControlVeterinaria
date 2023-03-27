@@ -17,10 +17,9 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-primary">
+  <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-      <a class="navbar-brand text-white" href="#">
-        <img src="/img/logoVet.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      <a class="navbar-brand text-primary" href="#">
         Veterinaria
       </a>    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +30,7 @@
   
       @if(auth()->check())
       <div class="d-flex">
-          <p class="text-white m-2">Bienvenido <b>{{ auth()->user()->name }}</b></p>
+          <p class="text-primary m-2">Bienvenido <b>{{ auth()->user()->name }}</b></p>
           <a href="{{ route('login.destroy') }}">
 
             <button type="button" class="btn btn-danger">Log Out</button>
@@ -59,5 +58,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 <script src="{{ asset('js/app.js')}}"></script>
+
+@yield('js')
 </body>
 </html>

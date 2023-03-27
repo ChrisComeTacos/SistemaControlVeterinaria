@@ -8,7 +8,7 @@
 
 
     <div class="p-2">
-        <a class="btn btn-light" href="{{ route('mascotas.index') }}">Volver</a>
+        <a class="btn btn-light" href="{{ route('consultas.index') }}">Volver</a>
     </div>
 
 </div>
@@ -20,10 +20,10 @@
         <div class="card">
             <div class="card-header">
 
-            <form action="{{ route('mascotas.update',$mascota) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('consultas.update',$consulta) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-              Receta médica
+              Receta consultas
             </div>
             <div class="card-body">
 

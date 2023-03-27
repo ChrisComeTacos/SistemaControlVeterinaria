@@ -33,23 +33,47 @@ class MascotaController extends Controller
     }
 
     public function store(Request $request)
-    {
+    { 
+
+        $request->validate([
+            'NombreDueno' => 'required',
+            'ApellidoP' => 'required',
+            'ApellidoM' => 'required',
+            'TelefonoDueno' => 'required | numeric | digits:10',
+            'FotoMascota' => 'required | image | mimes:jpeg,jpg,png|max:2048',
+            'NombreMascota' => 'required',
+            'EspecieMascota' => 'required',
+            'RazaMascota' => 'required',
+            'FechaCita' => 'required | date',
+        ]);
+
+
+
         $mascota = new Mascota();
+
+        if( $request->hasFile('FotoMascota')); {
+            $file = $request->file('FotoMascota');
+            $destinationPath = 'img/FotoMascota/';
+            $filename =  time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('FotoMascota')->move($destinationPath, $filename);
+            $mascota->FotoMascota = $destinationPath . $filename;
+        }
 
         $mascota->NombreDueno = $request->NombreDueno;
         $mascota->ApellidoP = $request->ApellidoP;
         $mascota->ApellidoM = $request->ApellidoM;
         $mascota->TelefonoDueno = $request->TelefonoDueno;
+        $mascota->FotoMascota = $request->FotoMascota;
         $mascota->NombreMascota = $request->NombreMascota;
         $mascota->EspecieMascota = $request->EspecieMascota;
         $mascota->RazaMascota = $request->RazaMascota;
         $mascota->PesoMascota = $request->PesoMascota;
         $mascota->FechaCita = $request->FechaCita;
+        $mascota->DiagnosticoMascota = $request->DiagnosticoMascota;
 
         
         $mascota->save();
-
-        return redirect()->route('mascotas.index');
+        return redirect()->route('mascotas.index')->with('success','Formulario validado');
     }
 
     public function show($mascota)
@@ -83,10 +107,13 @@ class MascotaController extends Controller
     public function update(Request $request, $mascota)
     {
         $mascota = Mascota::find($mascota);
+        $mascota->FotoMascota = $request->FotoMascota;
         $mascota->EspecieMascota = $request->EspecieMascota;
         $mascota->RazaMascota = $request->RazaMascota;
         $mascota->PesoMascota = $request->PesoMascota;
         $mascota->AsistenciaStatus = $request->AsistenciaStatus;
+        $mascota->DiagnosticoMascota = $request->DiagnosticoMascota;
+
 
         $mascota->save();
         return redirect()->route('mascotas.index');

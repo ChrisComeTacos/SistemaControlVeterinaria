@@ -1,10 +1,66 @@
-@extends('layouts.inicio')
+@extends('layouts.app')
 
 @section('title', 'PanelAdmin')
 
-@section('content')
+@section('secciones')
+
+<header>
+
+      <h2 class="logo">Veterinaria</h2>
+      <div class="menu"></div>
+      
+      <nav class="navigation">
+              <a>¡Bienvenido, <b>{{ auth()->user()->name }}!</b></a>
+              <a href="{{ route('login.destroy') }}" class="active">Log Out</a>
+      </nav>
+
+</header>
+  
+@endsection
+
+@section('CuerpoInicio')
 
 <img class="wave2" src="img/FondoPagina.png">
+
+<div class="contenido">
+       
+  <div class="card">
+      <img src="img/cards/mascotasCard.png">
+      <br><br>
+      <h4>Administración de citas/mascotas</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+      <a href="{{ route('consultas.index') }}">Leer más</a>
+  </div>
+  
+  <div class="card">
+      <img src="img/cards/medicamentosCard.png">
+      <br><br>
+      <h4>Administración de medicamentos</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+      <a href="{{ route('medicinas.index') }}">Leer más</a>
+  </div>
+  
+  <div class="card">
+      <img src="img/cards/materialesCard.png">
+      <br><br>
+      <h4>Administración de materiales</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+      <a href="{{ route('suministros.index') }}">Leer más</a>
+  </div>
+
+  <div class="card">
+    <img src="img/cards/materialesCard.png">
+    <br><br>
+    <h4>Añadir especies</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+    <a href="{{ route('especies.index') }}">Leer más</a>
+</div>
+  
+</div>
+
+@endsection
+
+{{-- <img class="wave2" src="img/FondoPagina.png">
 
 <h1 class="text-5xl text-center pt-24 m-4">¡Bienvenido al panel de administrador!</h1>
     
@@ -37,6 +93,4 @@
       </div>
     </div>
 
-</div>
-
-@endsection
+</div> --}}

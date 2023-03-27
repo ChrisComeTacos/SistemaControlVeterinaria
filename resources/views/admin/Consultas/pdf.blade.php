@@ -67,8 +67,8 @@
       <table width="100%">
         <tr>
             <td><h1>RECETA MÉDICA</h1></td>
-            <td><strong>Fecha:</strong> {{$mascota->FechaCita}}</td>
-            <td><strong>Cliente:</strong> {{$mascota->NombreDueno}} {{$mascota->ApellidoP}} {{$mascota->ApellidoM}}</td>
+            <td><strong>Fecha:</strong> {{$consulta->FechaCita}}</td>
+            <td><strong>Cliente:</strong> {{$consulta->NombreDueno}} {{$consulta->ApellidoP}} {{$consulta->ApellidoM}}</td>
         </tr>
     
       </table>
@@ -84,11 +84,11 @@
         <tbody>
 
                 <tr>
-                    <td class="text-center">{{$mascota->id}}</td> class="text-center"
-                    <td class="text-center">{{$mascota->NombreMascota}}</td>
-                    <td class="text-center">{{$mascota->EspecieMascota}}</td>
-                    <td class="text-center">{{$mascota->RazaMascota}}</td>
-                    <td class="text-center">{{$mascota->PesoMascota}} Kg.</td>     
+                    <td class="text-center">{{$consulta->id}}</td> class="text-center"
+                    <td class="text-center">{{$consulta->NombreMascota}}</td>
+                    <td class="text-center">{{$consulta->EspecieMascota}}</td>
+                    <td class="text-center">{{$consulta->RazaMascota}}</td>
+                    <td class="text-center">{{$consulta->PesoMascota}} Kg.</td>     
                 </tr>
         </tbody>
 
@@ -97,7 +97,7 @@
     <br>
     <h3>Diagnóstico</h1>
 
-    <p>{{$mascota->DiagnosticoMascota}}</p>
+    <p>{{$consulta->DiagnosticoMascota}}</p>
 
 
 

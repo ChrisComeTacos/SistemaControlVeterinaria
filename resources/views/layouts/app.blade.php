@@ -12,60 +12,18 @@
     {{-- FUENTE --}}
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
     
+    {{-- FONTAWESOME --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
 </head>
 <body>
 
-    <header>
-        
-        <h2 class="logo">Veterinaria</h2>
-        <div class="menu"></div>
-        
-        <nav class="navigation">
-            <a href="{{ route('inicio')}}">Inicio</a>
-            <a href="{{ route('contacto')}}">Contacto</a>
-            <a href="#">Galería</a>
-            <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a>
-          </nav>
+    @yield('secciones')
 
-        {{-- @if(auth()->check())
-  
-            </a>
-        
-            <h2 class="logo">Veterinaria</h2>
-            <div class="menu"></div>
-            
-            <nav class="navigation">
-                <a>Bienvenido <b>{{ auth()->user()->name }}</b></a>
-                <a href="{{ route('inicio')}}">Inicio</a>
-                <a href="{{ route('contacto')}}">Contacto</a>
-                <a href="#">Galería</a>
-                <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a>
-                <a href="{{ route('login.destroy') }}">
-                    <button>Log Out</button>
-            </nav>
-            
-            @else
-  
-            <h2 class="logo">Veterinaria</h2>
-            <div class="menu"></div>
-            
-            <nav class="navigation">
-                <a href="{{ route('inicio')}}">Inicio</a>
-                <a href="{{ route('contacto')}}">Contacto</a>
-                <a href="#">Galería</a>
-                <a href="{{ route('AgendarCita')}}" class="active">Agendar cita</a>
-                <a href="{{ route('login.index') }}">Log In</a>
-                <a href="{{ route('register.index') }}">Register</a>
-              </nav>
-            @endif --}}
-
-      </header>
-
-
-
-      @yield('CuerpoInicio')
+    @yield('CuerpoInicio')
 
 
     <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

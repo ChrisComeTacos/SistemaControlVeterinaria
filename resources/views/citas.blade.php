@@ -41,7 +41,7 @@
 
 
   <div class="cita">
-    <h1>!AGENDA TU CITA!</h1>
+    <h1>!AGENDA TU consulta!</h1>
     <p>Agenda una cita previa para tu mascota en la veterinaria rellenando nuestro formulario en línea. Es fácil y rápido, solo ingresa tus datos y los de tu mascota. ¡No esperes más y agenda la cita hoy mismo!</p>
     <form action="{{ route('consultas.store') }}" method="POST">
       @csrf
@@ -144,7 +144,7 @@
 
       <div class="row">
 
-        <button type="submit" value="agregar">Button</button>
+        <button type="submit" value="agregar">Agregar</button>
 
 
           {{-- <button class="show-modal">Show Modal</button>
